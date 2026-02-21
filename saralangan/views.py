@@ -1,3 +1,7 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from .models import Saralangan
+from .serializers import SaralanganSerializer
 
-# Create your views here.
+class SaralanganViewSet(viewsets.ModelViewSet):
+    queryset = Saralangan.objects.all()
+    serializer_class = SaralanganSerializer
